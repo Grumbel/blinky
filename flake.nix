@@ -27,7 +27,7 @@
 
               mkdir -p $out/bin/
               echo "#!/bin/sh" > $out/bin/install-blinky-stlink
-              echo "st-flash write $out/share/blinky/Blinky.bin 0x08000000" >> $out/bin/install-blinky-stlink
+              echo "${pkgs.stlink}/bin/st-flash write $out/share/blinky/Blinky.bin 0x08000000" >> $out/bin/install-blinky-stlink
               chmod +x $out/bin/install-blinky-stlink
             '';
             fixupPhase = ''

@@ -34,7 +34,24 @@
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "stm32cubef4_src": "stm32cubef4_src"
+      }
+    },
+    "stm32cubef4_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657019179,
+        "narHash": "sha256-ShGhYaMBgbXPd5IfVSa69M/ZnN/DijtVg7ZQYC4YLiM=",
+        "owner": "STMicroelectronics",
+        "repo": "STM32CubeF4",
+        "rev": "52757b5e33259a088509a777a9e3a5b971194c7d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "STMicroelectronics",
+        "repo": "STM32CubeF4",
+        "type": "github"
       }
     }
   },

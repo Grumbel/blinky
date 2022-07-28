@@ -14,7 +14,7 @@
 # target
 ######################################
 TARGET = Blinky
-
+STM32CUBEF4 = /opt/STM32CUBEF4
 
 ######################################
 # building variables
@@ -40,21 +40,21 @@ Core/Src/main.c \
 Core/Src/stm32f4xx_it.c \
 Core/Src/stm32f4xx_hal_msp.c \
 Core/Src/system_stm32f4xx.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
-/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \
+$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 
 # ASM sources
 ASM_SOURCES =  \
@@ -112,10 +112,10 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--I/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Inc \
--I/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy \
--I/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include \
--I/home/ingo/STM32Cube/Repository/STM32Cube_FW_F4_V1.27.1/Drivers/CMSIS/Include
+-I$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Inc \
+-I$(STM32CUBEF4)/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy \
+-I$(STM32CUBEF4)/Drivers/CMSIS/Device/ST/STM32F4xx/Include \
+-I$(STM32CUBEF4)/Drivers/CMSIS/Include
 
 
 # compile gcc flags

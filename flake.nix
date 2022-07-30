@@ -13,6 +13,8 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in rec {
         packages = flake-utils.lib.flattenTree rec {
+          default = blinky;
+
           blinky = pkgs.stdenv.mkDerivation rec {
             pname = "blinky";
             version = "0.0.0";
@@ -27,11 +29,6 @@
             installPhase = ''
               mkdir -p "$out/share/${pname}"
               cp -v build/*.elf build/*.hex build/*.bin "$out/share/${pname}/"
-
-              mkdir -p $out/bin/
-              echo "#!/bin/sh" > $out/bin/install-blinky-stlink
-              echo "${pkgs.stlink}/bin/st-flash write $out/share/blinky/Blinky.bin 0x08000000" >> $out/bin/install-blinky-stlink
-              chmod +x $out/bin/install-blinky-stlink
             '';
             fixupPhase = ''
               # do nothing
@@ -39,13 +36,10 @@
             buildInputs = with pkgs; [
             ];
           };
-          default = blinky;
-        };
-        apps = {
-          install = flake-utils.lib.mkApp {
-            drv = packages.blinky;
-            exePath = "/bin/install-blinky-stlink";
-          };
+
+          flash-blinky = pkgs.writeShellScriptBin "flash-blinky" ''
+            st-flash write ${blinky}/share/blinky/Blinky.bin 0x08000000
+          '';
         };
       }
     );

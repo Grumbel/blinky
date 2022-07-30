@@ -14,5 +14,5 @@ Building
 Installing on the STM32F401CCU6 via ST-Link
 -------------------------------------------
 
-    nix run .#install
+    nix run .#flash-blinky
 

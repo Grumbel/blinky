@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils.url = "github:numtide/flake-utils";
 
     stm32cubef4_src.url = "github:STMicroelectronics/STM32CubeF4";
@@ -12,7 +12,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
       in rec {
-        packages = flake-utils.lib.flattenTree rec {
+        packages = rec {
           default = blinky;
 
           blinky = pkgs.stdenv.mkDerivation rec {
